@@ -1,0 +1,9 @@
+{
+  "name"       : "villaestermodernemedien/plg_system_seolanghref",
+  "description": "SEO LAng HREF",
+  "license"    : "GPL-3+",
+  "require"    : {
+    "php": ">=5.6",
+    "joomla-projects/jorobo": "dev-develop"
+  }
+}
