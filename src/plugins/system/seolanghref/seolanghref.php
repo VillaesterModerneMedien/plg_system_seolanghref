@@ -10,7 +10,6 @@
 * @license     GNU General Public License version 3 or later
 */
 
-
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
@@ -31,7 +30,6 @@ use Joomla\Module\Menu\Site\Helper\MenuHelper;
 
 class PlgSystemSeolanghref extends CMSPlugin
 {
-	
     /**
      * Change Head Links
      *
