@@ -42,12 +42,17 @@ class PlgSystemSeolanghref extends CMSPlugin
 	    $doc = Factory::getDocument();
 
 	    $app  = Factory::getApplication();
-
-		if($app->isClient('site') && !empty($associations))
-		{
-		    $active = $app->getMenu()->getActive();
-		    $associations = Associations::getAssociations('com_menus', '#__menu', 'com_menus.item', $active->id);
 		
+		if($app->isClient('administrator'))
+		{
+			return;
+		}
+
+        $active = $app->getMenu()->getActive();
+	    $associations = Associations::getAssociations('com_menus', '#__menu', 'com_menus.item', $active->id);
+		
+		if(!empty($associations))
+		{
 		    $lang        = Factory::getLanguage();
 		    $currentLanguageTag = $lang->get('tag');
 		    $currentLanguageTagShort = substr(strtolower($lang->get('tag')), 0, 2);
@@ -86,7 +91,7 @@ class PlgSystemSeolanghref extends CMSPlugin
 	        }
 		}
 		
-	    if($app->isClient('site') && Factory::getLanguage()->get('tag') == 'de-DE')
+	    if(Factory::getLanguage()->get('tag') == 'de-DE')
 	    {
 		    $lang        = Factory::getLanguage();
 		    $currentLanguageTagShort = substr(strtolower($lang->get('tag')), 0, 2);
