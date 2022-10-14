@@ -28,16 +28,7 @@ use Joomla\Module\Menu\Site\Helper\MenuHelper;
 
 class PlgSystemSeolanghref extends CMSPlugin
 {
-	/**
-	 * @var    string[]
-	 * @since  1.0.0
-	 */
-	protected $unsetUrls = [
-		'http://joomla1.joomla.local:8074/fr/test-fr"',
-		'http://joomla1.joomla.local:8074/de/test-2'
-	];
-
-
+	
     /**
      * Change Head Links
      *
