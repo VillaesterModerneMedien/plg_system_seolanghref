@@ -85,13 +85,12 @@ class PlgSystemSeolanghref extends CMSPlugin
 				else{
 					$link = Route::_($active->link . '&Itemid=' . $active->id . '&lang=' . $currentLanguageTagShort);
 					unset($doc->_links[$baseUrl . substr($link, 1)]);
-					$doc->addHeadLink($baseUrl . substr($link, 1), 'canonical', 'rel',['hreflang' => $currentLanguageTagShort]);
 					$doc->addHeadLink($baseUrl . substr($link, 1) . '####', 'alternate', 'rel',['hreflang' => $currentLanguageTagShort]);
 				}
 	        }
 		}
 		
-	    if(Factory::getLanguage()->get('tag') == 'de-DE')
+	    if(Factory::getLanguage()->get('tag') != '')
 	    {
 		    $lang        = Factory::getLanguage();
 		    $currentLanguageTagShort = substr(strtolower($lang->get('tag')), 0, 2);
@@ -103,6 +102,7 @@ class PlgSystemSeolanghref extends CMSPlugin
 	    else{
 		    $currentUrl = Uri::current();
 		    $doc->addHeadLink($currentUrl, 'canonical', 'rel');
+		    $doc->addHeadLink($currentUrl, 'canonical', 'rel',['hreflang' => $currentLanguageTagShort]);
 		    $doc->addHeadLink($currentUrl . '####', 'alternate', 'rel');
 	    }
     }
